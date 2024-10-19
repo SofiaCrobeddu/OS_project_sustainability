@@ -9,23 +9,18 @@ Personal information:
 
 ## PURPOSE
 
-The aim of this project is to examines the sustainability of Colombia’s agriculture for the environmental dimension, focusing also on an analysis of water stress in the second part. In the first part this environmental dimension is measured through four proxy sub-indicators, and the trend and status assessment. In the second part of the prject, instead, I try to make a prediction of the Water Stress Level indicator in 2030, the year of the SDGs Agenda.
+The aim of this project is to examines the sustainability of Colombia’s agriculture for the environmental dimension, focusing also on an analysis of water stress in the second part. In the first part this environmental dimension is measured through four proxy sub-indicators, and the trend and status assessment. In the second part of the prject, instead, I try to make a prediction of the Water Stress Level indicator , doing also a preliminary reflexion on avocado production, in 2030 (the year of the SDGs Agenda).
 
 ## REPOSITORIES
 
-The repositories are two:
-- **data**: it contains the csv files with the original datasets. The files inside are the following ones:
-  - `condition.csv`: contains the health conditions. Each condition has an id, a name and an url link. It is also connected to an other csv files through the column source_id.
-  - `drug.csv`: contains the healthcare drug's information. Each drug has an id, a name, a specific url link and a link to the drugbank.
-  - `interaction.csv`: contains the interactions between drugs. Each interaction has an id and it is connected to an others csv files through the columns source_drug_id and target_drug_id.
-  - `manufacturer.csv`: contains the manufacturer information. Each manufacturer has an id and a name.
-  - `price.csv`: contains the medical product's price. Each price has an id, the value indicated by the column "price", a specific type and an url link. It is also connected to the others csv files through the columns product_id and store_id.
-  - `product.csv`: contains the medical product's information. Each product has an id, a name, a type, an url link, the number of reviews. It is also connected to the others csv files through the columns source_id, drug_id and manufacturer_id.
-  - `source.csv`: contains the source of information. Each source has an id a name (such as Wikidata, Drugbank, etc...) and the correspondent url. This dataset was not actually used and it is just put here for completeness.
-  - `store.csv`: contains the store information. Each store has an id and a name.
-  - `treatement.csv`: contains the treatements' information. Each treatment has an id, and it is connected to the others csv files through the columns source_id, drug_id and condition_id.
-
-- **script**: it contains the sql files with the instructions performing the task. The files inside are the following ones:
-
-`tables.sql`
-> The SQL code of the initial tables;
+The macro-repositories are:
+- **data**: it contains the csv files with the original datasets. The files and repositories with data inside, are the following ones:
+  - `colombia_emissions_total_CO2.csv`: contains Colombia's total emissions of CO2. These data were needed to calculate the Greenhouse Gas Emission, since they represent the numerator of this proxy sub-indicator. From FAOstat.
+  - `colombia_fertilizer_use_intensity.csv`: contains Colombia's fertilizer use intensity. From FAOstat.
+  - `colombia_pesticides_use_intensity.csv`: contains Colombia's pesticides use intensity. From FAOstat.
+  - `colombia_value_prod_agriculture.csv`: contains Colombia's value of agricultural production. These data were needed to calculate the Greenhouse Gas Emission, since they represent the denominator of this proxy sub-indicator. From FAOstat.
+  - `colombia_water_stress.csv`: contains Colombia's water stress. From FAOstat.
+  - There are also two other internal repositories:
+     - **water stress - World Bank**: it contains the dataset `water stress and variables - WB.csv` regarding data for water stress level for Colombia, from World Bank databases. Comapred to the dataset from FAOstat, this one contains more specific information such as "Annual freshwater withdrawals, agriculture (% of total freshwater withdrawal)", "Annual freshwater withdrawals, domestic (% of total freshwater withdrawal)", "Annual freshwater withdrawals, industry (% of total freshwater withdrawal)", "Annual freshwater withdrawals, total (billion cubic meters)", "Level of water stress: freshwater withdrawal as a proportion of available freshwater resources", "Renewable internal freshwater resources, total (billion cubic meters)", "Average precipitation in depth (mm per year)", "Population, total", "GDP per capita (constant 2015 US$)", "Population density (people per sq. km of land area)".
+     - **ML_part**: it contains the dataset `data_cleaned.csv` that comes from the previous one mentioned before (`water stress and variables - WB.csv`), after renaiming columns, converting in number the observations and reindexing.
+- **script**: it contains the 
