@@ -26,4 +26,4 @@ The macro-repositories are:
 - **script**: it contains the codes for the analysis among these files:
   - `final project.R`: it contains all the analysis for the first part regarding the proxy sub-indicators, the status and trend assessment for the environmental dimension of agricultural sustainability. Regarding the second part of the project, it contains also a preliminary analysis on avocado production and its correlation with water stress, and a tentative prediction with a JAGS model (Bayesian prediction). This model didn't give good results.
   - `final project Notebook.ipynb`: it contains the second part of the analysis. Two methods to make predicion were applied, and in particular a Neural Network implemented though the deep learning library Keras from Tensorflow, and the second one based on Extrapolation approach, that is the process of projection of data beyond the years observed. The first one didn't give good results, while the second one better.
-  - `model_jags.txt`: 
+  - `model_jags.txt`: text file of the JAGS model applied to data.
