@@ -1,0 +1,23 @@
+model {
+#Data assumed Normal
+  for (i in 1:N) {
+    Y[i] ~ dnorm(mu[i], tau)
+    mu[i] <- beta[1] * Agriculture[i] + 
+             beta[2] * Domestic[i] +
+             beta[3] * Industry[i] + 
+             beta[4] * Total[i] +
+             beta[5] * Renewable[i] + 
+             beta[6] * Precipitation[i] +
+             beta[7] * Population[i] + 
+             beta[8] * GDP[i] +
+             beta[9] * Density[i]
+  }
+
+  #Priors
+  for (j in 1:9) {
+    beta[j] ~ dnorm(0, 1) 
+  }
+
+  #Precision of the likelihood
+  tau ~ dgamma(0.001, 0.001)
+}
